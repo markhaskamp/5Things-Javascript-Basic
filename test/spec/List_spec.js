@@ -32,7 +32,20 @@ describe("List", function() {
       expect(list.things[4]).toEqual('2');
       expect(list.things.length).toEqual(5);
     });
+
   });
 });
 
 
+describe("ListView", function() {
+  describe("#add_thing", function() {
+    
+    it("add_thing calls render", function() {
+      var listview = Object.beget(ListView);
+      spyOn(listview, 'render');
+      listview.add_thing('foo argument');
+
+      expect(listview.render).toHaveBeenCalled();
+    });
+  });
+});
