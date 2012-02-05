@@ -33,12 +33,20 @@ describe("ListView", function() {
       expect(listview.things.length).toEqual(5);
     });
 
-    it("add_thing calls render", function() {
+    it("add_thing calls render()", function() {
       var listview = Object.beget(ListView);
       spyOn(listview, 'render');
       listview.add_thing('foo argument');
 
       expect(listview.render).toHaveBeenCalled();
+    });
+
+    it("add_thing calls save_things()", function() {
+      var listview = Object.beget(ListView);
+      spyOn(listview, 'save_things');
+      listview.add_thing('foo argument');
+
+      expect(listview.save_things).toHaveBeenCalled();
     });
 
   });

@@ -2,16 +2,6 @@ var ListView = {
   
   things: []
 
-  ,add_thing: function(thing) {
-    this.things.unshift(thing);
-
-    if (this.things.length > 5) {
-      this.things.pop();
-    }
-
-    this.render();
-  }
-
   ,render: function() {
     var html_str = "<ul>";
 
@@ -22,6 +12,27 @@ var ListView = {
 
     $('#list').html(html_str);
 
+  }
+
+  ,add_thing: function(thing) {
+    this.things.unshift(thing);
+
+    if (this.things.length > 5) {
+      this.things.pop();
+    }
+
+    this.render();
+    this.save_things();
+  }
+
+  ,save_things: function() {
+    if (Modernizr.localStorage) {
+      localStorage.setItem('five_things.javascript.things', this.things);
+    }
+  }
+  
+  ,fetch_things: function() {
+    var saved_things = localStorage.getItem('five_things.javascript.things');
   }
 
 }
