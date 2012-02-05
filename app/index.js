@@ -1,4 +1,8 @@
+var Foo = { "answer": 42 };
+
 $(document).ready( function() {
-    console.log('eddie would go');
+    var f = Object.beget(Foo);
+    console.log(f.answer);
+
 });
 
