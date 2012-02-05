@@ -1,8 +1,10 @@
-var Foo = { "answer": 42 };
 
 $(document).ready( function() {
-    var f = Object.beget(Foo);
-    console.log(f.answer);
+    // var f = Object.beget(ListView);
+
+    $('#btnAdd').on('click', function() {
+            console.log('eddie would go');
+    });
 
 });
 
