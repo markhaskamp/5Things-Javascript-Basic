@@ -1,6 +1,6 @@
 # Five Things, Basic Javascript
 
-see [http://markhaskamp.posterous.com/five-things](5 Things)
+see [5 Things](http://markhaskamp.posterous.com/five-things)
 
 ## tech
 
