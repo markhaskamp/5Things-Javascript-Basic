@@ -1,9 +1,10 @@
 
+var listview;
 $(document).ready( function() {
-    // var f = Object.beget(ListView);
+    listview = Object.beget(ListView);
 
     $('#btnAdd').on('click', function() {
-      console.log('eddie would go');
+      listview.add_thing($('#txtItem').val());
     });
 
 });

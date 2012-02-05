@@ -13,6 +13,15 @@ var ListView = {
   }
 
   ,render: function() {
+    var html_str = "<ul>";
+
+    $.each(this.things, function(ndx, item) {
+      html_str += "<li>" + item + "</li>";
+    });
+    html_str += "</ul>";
+
+    $('#list').html(html_str);
+
   }
 
 }
