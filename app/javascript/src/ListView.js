@@ -32,7 +32,20 @@ var ListView = {
   }
   
   ,fetch_things: function() {
-    var saved_things = localStorage.getItem('five_things.javascript.things');
+    if (Modernizr.localstorage) {
+      var things_list = localStorage.getItem('five_things.javascript.things');
+      if (things_list === null) {
+        return [];
+      }
+      else {
+        return things_list.split(',');
+      }
+    }
+  }
+
+  ,render_saved_things: function(things_list) {
+    this.things = things_list;
+    this.render();
   }
 
 }
