@@ -26,7 +26,7 @@ var ListView = {
   }
 
   ,save_things: function() {
-    if (Modernizr.localStorage) {
+    if (Modernizr.localstorage) {
       localStorage.setItem('five_things.javascript.things', this.things);
     }
   }
